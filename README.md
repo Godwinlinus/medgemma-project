@@ -62,7 +62,20 @@ pip install -r requirements.txt
    - Or set the `HF_TOKEN` environment variable
    - Or modify the `.env.local` file with your token
 
+## Quick Start
+
+1. **Test the setup**: `python demo.py`
+2. **Get MedGemma access** (see prerequisites)
+3. **Run the assistant**: `python medgemma_assistant.py`
+4. **Try examples**: `python example.py`
+
 ## Usage
+
+### Testing Setup
+```bash
+python demo.py
+```
+This will verify that your environment is properly configured.
 
 ### Interactive Mode
 ```bash
