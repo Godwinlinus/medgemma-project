@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedGemma - Medical AI Assistant</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header h1 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+        }
+
+        .disclaimer {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .container {
+            flex: 1;
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .sidebar {
+            width: 300px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .patient-info {
+            margin-bottom: 2rem;
+        }
+
+        .patient-info h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #5a6fd8;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .chat-container {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chat-status {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .status-indicator {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #28a745;
+        }
+
+        .status-indicator.loading {
+            background: #ffc107;
+            animation: pulse 2s infinite;
+        }
+
+        .status-indicator.error {
+            background: #dc3545;
+        }
+
+        .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 1rem;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .message.user {
+            align-self: flex-end;
+            background: #667eea;
+            color: white;
+        }
+
+        .message.assistant {
+            align-self: flex-start;
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #e9ecef;
+        }
+
+        .message-header {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-bottom: 0.5rem;
+        }
+
+        .chat-input {
+            padding: 1rem;
+            border-top: 1px solid #eee;
+            background: #f8f9fa;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .chat-input input:focus {
+            border-color: #667eea;
+        }
+
+        .conversations-list {
+            flex: 1;
+            margin-top: 2rem;
+        }
+
+        .conversations-list h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .conversation-item {
+            padding: 0.75rem;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .conversation-item:hover {
+            background: #f8f9fa;
+        }
+
+        .conversation-item.active {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .conversation-date {
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+
+            .message {
+                max-width: 90%;
+            }
+        }
+
+        .loading-dots {
+            display: inline-block;
+        }
+
+        .loading-dots::after {
+            content: '';
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { content: ''; }
+            25% { content: '.'; }
+            50% { content: '..'; }
+            75% { content: '...'; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 MedGemma - Medical AI Assistant</h1>
+        <div class="disclaimer">
+            ⚠️ For educational purposes only. Always consult healthcare professionals.
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="patient-info">
+                <h3>👤 Patient Information</h3>
+                <form id="patientForm">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" placeholder="Enter your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" placeholder="Enter your age">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender">
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="symptoms">Current Symptoms:</label>
+                        <textarea id="symptoms" placeholder="Describe your symptoms (e.g., headache, fever, cough...)"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="medicalHistory">Medical History:</label>
+                        <textarea id="medicalHistory" placeholder="Any relevant medical history, allergies, medications..."></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Update Information</button>
+                </form>
+            </div>
+
+            <div class="conversations-list">
+                <h3>💬 Conversations</h3>
+                <div id="conversationsList">
+                    <div class="conversation-item active" data-id="default">
+                        <div>New Conversation</div>
+                        <div class="conversation-date">Current</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="chat-status">
+                    <div class="status-indicator" id="statusIndicator"></div>
+                    <span id="statusText">Ready to chat</span>
+                </div>
+                <div>
+                    <button class="btn" onclick="clearChat()">Clear Chat</button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <div class="message assistant">
+                    <div class="message-header">MedGemma Assistant</div>
+                    <div>Hello! I'm MedGemma, your medical AI assistant. I can help answer general medical questions and discuss symptoms. Please remember that I'm not a substitute for professional medical advice.
+
+To get started, please fill out your information on the left, then ask me any medical questions you have!</div>
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Ask a medical question..." onkeypress="handleKeyPress(event)">
+                <button class="btn" onclick="sendMessage()" id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentConversationId = 'default';
+        let isLoading = false;
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            loadConversations();
+            updateStatus('Ready to chat', 'ready');
+        });
+
+        // Handle form submission
+        document.getElementById('patientForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            updatePatientInfo();
+        });
+
+        function updatePatientInfo() {
+            const patientInfo = {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                symptoms: document.getElementById('symptoms').value,
+                medicalHistory: document.getElementById('medicalHistory').value
+            };
+
+            fetch('/api/patient-info', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    conversation_id: currentConversationId,
+                    patient_info: patientInfo
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    showNotification('Patient information updated!', 'success');
+                } else {
+                    showNotification('Error updating information', 'error');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                showNotification('Error updating information', 'error');
+            });
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message || isLoading) return;
+
+            // Add user message to chat
+            addMessage('user', message);
+            input.value = '';
+
+            // Update patient info if not already done
+            updatePatientInfo();
+
+            // Send to server
+            isLoading = true;
+            updateStatus('Thinking...', 'loading');
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message: message,
+                    conversation_id: currentConversationId,
+                    patient_info: getPatientInfo()
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                isLoading = false;
+                if (data.error) {
+                    addMessage('assistant', `Error: ${data.error}`);
+                    updateStatus('Error occurred', 'error');
+                } else {
+                    addMessage('assistant', data.response);
+                    updateStatus('Ready to chat', 'ready');
+                }
+            })
+            .catch(error => {
+                isLoading = false;
+                console.error('Error:', error);
+                addMessage('assistant', 'Sorry, I encountered an error. Please try again.');
+                updateStatus('Error occurred', 'error');
+            });
+        }
+
+        function addMessage(role, content) {
+            const messagesDiv = document.getElementById('chatMessages');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${role}`;
+
+            const header = role === 'user' ? 'You' : 'MedGemma Assistant';
+            messageDiv.innerHTML = `
+                <div class="message-header">${header}</div>
+                <div>${content.replace(/\n/g, '<br>')}</div>
+            `;
+
+            messagesDiv.appendChild(messageDiv);
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        }
+
+        function updateStatus(text, status) {
+            const indicator = document.getElementById('statusIndicator');
+            const statusText = document.getElementById('statusText');
+
+            indicator.className = 'status-indicator';
+            if (status === 'loading') {
+                indicator.classList.add('loading');
+            } else if (status === 'error') {
+                indicator.classList.add('error');
+            }
+
+            statusText.textContent = text;
+        }
+
+        function getPatientInfo() {
+            return {
+                name: document.getElementById('name').value,
+                age: document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                symptoms: document.getElementById('symptoms').value,
+                medicalHistory: document.getElementById('medicalHistory').value
+            };
+        }
+
+        function clearChat() {
+            if (confirm('Are you sure you want to clear the chat? This will start a new conversation.')) {
+                document.getElementById('chatMessages').innerHTML = '';
+                currentConversationId = 'default_' + Date.now();
+                addMessage('assistant', 'Hello! I\'m ready for a new conversation. How can I help you today?');
+                updateStatus('Ready to chat', 'ready');
+            }
+        }
+
+        function loadConversations() {
+            fetch('/api/conversations')
+                .then(response => response.json())
+                .then(conversations => {
+                    const listDiv = document.getElementById('conversationsList');
+                    listDiv.innerHTML = `
+                        <div class="conversation-item active" data-id="default">
+                            <div>New Conversation</div>
+                            <div class="conversation-date">Current</div>
+                        </div>
+                    `;
+
+                    conversations.forEach(conv => {
+                        const convDiv = document.createElement('div');
+                        convDiv.className = 'conversation-item';
+                        convDiv.setAttribute('data-id', conv.id);
+                        convDiv.onclick = () => loadConversation(conv.id);
+
+                        const date = new Date(conv.timestamp).toLocaleDateString();
+                        convDiv.innerHTML = `
+                            <div>Conversation ${conv.message_count} messages</div>
+                            <div class="conversation-date">${date}</div>
+                        `;
+
+                        listDiv.appendChild(convDiv);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading conversations:', error);
+                });
+        }
+
+        function loadConversation(conversationId) {
+            fetch(`/api/conversation/${conversationId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        showNotification('Error loading conversation', 'error');
+                        return;
+                    }
+
+                    currentConversationId = conversationId;
+                    const messagesDiv = document.getElementById('chatMessages');
+                    messagesDiv.innerHTML = '';
+
+                    // Load patient info
+                    if (data.patient_info) {
+                        document.getElementById('name').value = data.patient_info.name || '';
+                        document.getElementById('age').value = data.patient_info.age || '';
+                        document.getElementById('gender').value = data.patient_info.gender || '';
+                        document.getElementById('symptoms').value = data.patient_info.symptoms || '';
+                        document.getElementById('medicalHistory').value = data.patient_info.medicalHistory || '';
+                    }
+
+                    // Load messages
+                    data.messages.forEach(msg => {
+                        addMessage(msg.role, msg.content);
+                    });
+
+                    // Update active conversation in list
+                    document.querySelectorAll('.conversation-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    document.querySelector(`[data-id="${conversationId}"]`).classList.add('active');
+                })
+                .catch(error => {
+                    console.error('Error loading conversation:', error);
+                    showNotification('Error loading conversation', 'error');
+                });
+        }
+
+        function showNotification(message, type) {
+            // Simple notification - you could enhance this
+            alert(message);
+        }
+
+        // Auto-save patient info every 30 seconds
+        setInterval(updatePatientInfo, 30000);
+    </script>
+</body>
+</html>
