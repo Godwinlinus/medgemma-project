@@ -148,3 +148,29 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Google for the MedGemma model
 - Hugging Face for the transformers library
 - The open-source AI community
+
+## Quick Demo Instructions (Hackathon)
+
+This repo includes a demo-friendly fallback so you can present without gated HF access.
+
+- Use the included `run_demo.ps1` to run the server in mock/demo mode (Windows PowerShell):
+
+```powershell
+# create venv if needed
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+
+# build frontend (if you edit it)
+cd frontend\ai_diagnostic_assistant
+npm ci --legacy-peer-deps
+npm run build
+cd ..\..
+
+# run demo (mock responses)
+.\run_demo.ps1
+```
+
+- To use real Hugging Face inference (if you have access to the gated model): set `HUGGINGFACEHUB_API_TOKEN` in your environment before running. The server will try local -> HF -> mock automatically.
+
+Supported upload types for demo: `txt`, `png`, `jpg`, `jpeg`, `gif`, `dcm`, `pdf`.

@@ -1,0 +1,12 @@
+{
+  "conversation_id": "default",
+  "timestamp": "2026-02-24T17:35:11.661401",
+  "patient_info": {
+    "name": "",
+    "age": "",
+    "gender": "",
+    "symptoms": "",
+    "medicalHistory": ""
+  },
+  "messages": []
+}

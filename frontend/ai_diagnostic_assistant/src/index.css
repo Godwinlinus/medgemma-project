@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme {
+    --font-inter: 'Inter', sans-serif;
+    --font-pacifico: 'Pacifico', cursive;
+    --font-plus-jakarta-sans: 'Plus Jakarta Sans', sans-serif;
+
+    --color-primary: #2D8A8A;
+    --color-accent-teal: #2D8A8A;
+    --color-accent-blue: #4F9DFF;
+    --color-error: #EF4444;
+
+    --color-bg-dark: #1A1A1A;
+    --color-surface-dark: #1E1E1E;
+    --color-border-dark: #2A2A2A;
+
+    --color-text-primary-dark: #EAEAEA;
+    --color-text-secondary-dark: #B3B3B3;
+    --color-text-muted-dark: #8A8A8A;
+
+    --color-bg-light: #FAFAFA;
+    --color-surface-light: #FFFFFF;
+    --color-border-light: #E5E7EB;
+
+    --color-text-primary-light: #1F2933;
+    --color-text-secondary-light: #4B5563;
+    --color-text-muted-light: #9CA3AF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background-dark: var(--color-bg-dark);
+    --surface-dark: var(--color-surface-dark);
+    --border-dark: var(--color-border-dark);
+    --text-primary: var(--color-text-primary-dark);
+    --text-secondary: var(--color-text-secondary-dark);
+    --text-muted: var(--color-text-muted-dark);
+}
+
+[data-theme="light"] {
+    --background-dark: var(--color-bg-light);
+    --surface-dark: var(--color-surface-light);
+    --border-dark: var(--color-border-light);
+    --text-primary: var(--color-text-primary-light);
+    --text-secondary: var(--color-text-secondary-light);
+    --text-muted: var(--color-text-muted-light);
+}
+
+body {
+    font-family: var(--font-inter);
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+}

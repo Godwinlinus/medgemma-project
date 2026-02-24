@@ -1,0 +1,29 @@
+{
+  "1": {
+    "id": 1,
+    "initials": "JD",
+    "name": "J. Doe",
+    "age": 45,
+    "status": "High Priority",
+    "note": "Waiting for clinical review • 12m",
+    "action": "assignment"
+  },
+  "2": {
+    "id": 2,
+    "initials": "AS",
+    "name": "A. Smith",
+    "age": 29,
+    "status": "Stable",
+    "note": "Vitals logged via MedGemma • 45m",
+    "action": "check"
+  },
+  "3": {
+    "id": 3,
+    "initials": "RK",
+    "name": "R. Khan",
+    "age": 62,
+    "status": "Stable",
+    "note": "Discharge protocol pending • 1h",
+    "action": "logout"
+  }
+}

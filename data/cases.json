@@ -1,0 +1,251 @@
+{
+  "04895bea-f06b-416a-9069-312fa1379a5c": {
+    "id": "04895bea-f06b-416a-9069-312fa1379a5c",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T19:15:12.947238",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "10955c92-3b61-4804-94a0-0037d8ef07d2_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "04895bea-f06b-416a-9069-312fa1379a5c",
+        "path": "uploads\\04895bea-f06b-416a-9069-312fa1379a5c\\10955c92-3b61-4804-94a0-0037d8ef07d2_test_upload.txt",
+        "uploaded_at": "2026-02-24T19:16:12.860557"
+      }
+    ]
+  },
+  "6b70b487-3ec5-47bc-acca-9d05ec0f83d9": {
+    "id": "6b70b487-3ec5-47bc-acca-9d05ec0f83d9",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T19:43:16.647354",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "8ce05f9d-7598-4987-a6e9-03e273a4d69f_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "6b70b487-3ec5-47bc-acca-9d05ec0f83d9",
+        "path": "uploads\\6b70b487-3ec5-47bc-acca-9d05ec0f83d9\\8ce05f9d-7598-4987-a6e9-03e273a4d69f_test_upload.txt",
+        "uploaded_at": "2026-02-24T19:43:47.800074"
+      }
+    ]
+  },
+  "40ad28c0-3931-40a3-9cdc-376fdef56eee": {
+    "id": "40ad28c0-3931-40a3-9cdc-376fdef56eee",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T19:46:17.955700",
+    "analysis": null
+  },
+  "42fe5ab9-a3a3-40b6-99e3-6d04532a1af5": {
+    "id": "42fe5ab9-a3a3-40b6-99e3-6d04532a1af5",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T19:47:16.785285",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "62472159-ba5a-44e4-9a3f-8b6c13d0cee2_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "42fe5ab9-a3a3-40b6-99e3-6d04532a1af5",
+        "path": "uploads\\42fe5ab9-a3a3-40b6-99e3-6d04532a1af5\\62472159-ba5a-44e4-9a3f-8b6c13d0cee2_test_upload.txt",
+        "uploaded_at": "2026-02-24T19:47:57.879872"
+      }
+    ]
+  },
+  "dcf71d62-d0ab-44d9-b92e-50efe65ff3af": {
+    "id": "dcf71d62-d0ab-44d9-b92e-50efe65ff3af",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T19:49:27.595621",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "ba5b0967-5b0c-446c-98ca-5e76daef7af6_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "dcf71d62-d0ab-44d9-b92e-50efe65ff3af",
+        "path": "uploads\\dcf71d62-d0ab-44d9-b92e-50efe65ff3af\\ba5b0967-5b0c-446c-98ca-5e76daef7af6_test_upload.txt",
+        "uploaded_at": "2026-02-24T19:49:57.880981"
+      }
+    ]
+  },
+  "f5f23f6e-4754-4ff7-83b1-263d8713eaff": {
+    "id": "f5f23f6e-4754-4ff7-83b1-263d8713eaff",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T20:09:03.991569",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "05e80f84-bdd3-4228-8ab1-6eadc4f79d07_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "f5f23f6e-4754-4ff7-83b1-263d8713eaff",
+        "path": "uploads\\f5f23f6e-4754-4ff7-83b1-263d8713eaff\\05e80f84-bdd3-4228-8ab1-6eadc4f79d07_test_upload.txt",
+        "uploaded_at": "2026-02-24T20:09:40.141111"
+      }
+    ]
+  },
+  "3adf87b3-940b-4d09-b1d4-ce64010a64ae": {
+    "id": "3adf87b3-940b-4d09-b1d4-ce64010a64ae",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T20:16:40.801775",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "1e4e5bb0-5f06-4ec3-aab7-2b397a9b2622_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "3adf87b3-940b-4d09-b1d4-ce64010a64ae",
+        "path": "uploads\\3adf87b3-940b-4d09-b1d4-ce64010a64ae\\1e4e5bb0-5f06-4ec3-aab7-2b397a9b2622_test_upload.txt",
+        "uploaded_at": "2026-02-24T20:17:43.751063"
+      }
+    ]
+  },
+  "8222427c-2f1f-4bf5-9eed-0a01ecc432be": {
+    "id": "8222427c-2f1f-4bf5-9eed-0a01ecc432be",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T20:26:07.989900",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "f239748c-aee8-466e-9900-9b78b9a2eb4c_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "8222427c-2f1f-4bf5-9eed-0a01ecc432be",
+        "path": "uploads\\8222427c-2f1f-4bf5-9eed-0a01ecc432be\\f239748c-aee8-466e-9900-9b78b9a2eb4c_test_upload.txt",
+        "uploaded_at": "2026-02-24T20:26:39.633165"
+      }
+    ]
+  },
+  "64ee29af-e3b1-4b6e-9e3c-3a124ab62931": {
+    "id": "64ee29af-e3b1-4b6e-9e3c-3a124ab62931",
+    "patient_name": "Frontend Upload",
+    "symptoms": "",
+    "medical_history": "",
+    "status": "pending",
+    "created_at": "2026-02-24T20:34:15.871584",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "2e2ea7b9-4045-4c21-a876-733fcd1d18d2_20250329_114105.jpg",
+        "filename": "20250329_114105.jpg",
+        "case_id": "64ee29af-e3b1-4b6e-9e3c-3a124ab62931",
+        "path": "uploads\\64ee29af-e3b1-4b6e-9e3c-3a124ab62931\\2e2ea7b9-4045-4c21-a876-733fcd1d18d2_20250329_114105.jpg",
+        "uploaded_at": "2026-02-24T20:34:16.170755"
+      }
+    ]
+  },
+  "77b9d3ea-62d5-486b-98d0-d669d255a8ee": {
+    "id": "77b9d3ea-62d5-486b-98d0-d669d255a8ee",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "completed",
+    "created_at": "2026-02-24T20:36:05.175149",
+    "analysis": {
+      "case_id": "77b9d3ea-62d5-486b-98d0-d669d255a8ee",
+      "primary_diagnosis": "See analysis below",
+      "confidence": "Pending clinical review",
+      "clinical_reasoning": "Possible diagnoses:\n1. Viral upper respiratory infection (60%)\n2. Community-acquired pneumonia (20%)\n\nClinical reasoning:\nPatient presents with fever and cough; consider viral causes vs bacterial given duration. Recommend chest X-ray and CBC.\n\nRecommended next steps:\n- Chest X-ray\n- Empiric supportive care\n- Follow-up in 48 hours or earlier if worse",
+      "recommendations": [],
+      "differential_diagnoses": [],
+      "timestamp": "2026-02-24T20:36:18.435996"
+    },
+    "files": [
+      {
+        "file_id": "7af81541-cbf5-4d10-9d05-f187de14b8c2_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "77b9d3ea-62d5-486b-98d0-d669d255a8ee",
+        "path": "uploads\\77b9d3ea-62d5-486b-98d0-d669d255a8ee\\7af81541-cbf5-4d10-9d05-f187de14b8c2_test_upload.txt",
+        "uploaded_at": "2026-02-24T20:36:18.785993"
+      }
+    ]
+  },
+  "08f40453-f237-44a8-957d-2daf232cbd91": {
+    "id": "08f40453-f237-44a8-957d-2daf232cbd91",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T20:56:24.003549",
+    "analysis": null
+  },
+  "ea7434a2-725e-490e-91a0-30a04dba3565": {
+    "id": "ea7434a2-725e-490e-91a0-30a04dba3565",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "pending",
+    "created_at": "2026-02-24T21:10:54.219037",
+    "analysis": null
+  },
+  "e5ded5bb-775c-4f4d-8295-91c56fbde5a7": {
+    "id": "e5ded5bb-775c-4f4d-8295-91c56fbde5a7",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "completed",
+    "created_at": "2026-02-24T21:14:38.194499",
+    "analysis": {
+      "case_id": "e5ded5bb-775c-4f4d-8295-91c56fbde5a7",
+      "primary_diagnosis": "See analysis below",
+      "confidence": "Pending clinical review",
+      "clinical_reasoning": "Possible diagnoses:\n1. Viral upper respiratory infection (60%)\n2. Community-acquired pneumonia (20%)\n\nClinical reasoning:\nPatient presents with fever and cough; consider viral causes vs bacterial given duration. Recommend chest X-ray and CBC.\n\nRecommended next steps:\n- Chest X-ray\n- Empiric supportive care\n- Follow-up in 48 hours or earlier if worse",
+      "recommendations": [],
+      "differential_diagnoses": [],
+      "timestamp": "2026-02-24T21:15:08.502393"
+    },
+    "files": [
+      {
+        "file_id": "3f22168c-72ab-4f18-a7b5-77261ebd7a6b_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "e5ded5bb-775c-4f4d-8295-91c56fbde5a7",
+        "path": "uploads\\e5ded5bb-775c-4f4d-8295-91c56fbde5a7\\3f22168c-72ab-4f18-a7b5-77261ebd7a6b_test_upload.txt",
+        "uploaded_at": "2026-02-24T21:15:08.862964"
+      }
+    ]
+  },
+  "003bd294-827f-4a35-a410-9dd98bf36abf": {
+    "id": "003bd294-827f-4a35-a410-9dd98bf36abf",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "completed",
+    "created_at": "2026-02-24T21:18:12.622125",
+    "analysis": {
+      "case_id": "003bd294-827f-4a35-a410-9dd98bf36abf",
+      "primary_diagnosis": "See analysis below",
+      "confidence": "Pending clinical review",
+      "clinical_reasoning": "Possible diagnoses:\n1. Viral upper respiratory infection (60%)\n2. Community-acquired pneumonia (20%)\n\nClinical reasoning:\nPatient presents with fever and cough; consider viral causes vs bacterial given duration. Recommend chest X-ray and CBC.\n\nRecommended next steps:\n- Chest X-ray\n- Empiric supportive care\n- Follow-up in 48 hours or earlier if worse",
+      "recommendations": [],
+      "differential_diagnoses": [],
+      "timestamp": "2026-02-24T21:18:54.691578"
+    },
+    "files": [
+      {
+        "file_id": "c901933c-9c3a-4c5f-a4b7-eb29f2cda3d0_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "003bd294-827f-4a35-a410-9dd98bf36abf",
+        "path": "uploads\\003bd294-827f-4a35-a410-9dd98bf36abf\\c901933c-9c3a-4c5f-a4b7-eb29f2cda3d0_test_upload.txt",
+        "uploaded_at": "2026-02-24T21:18:55.318199"
+      }
+    ]
+  }
+}
