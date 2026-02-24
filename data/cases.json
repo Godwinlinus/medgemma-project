@@ -247,5 +247,85 @@
         "uploaded_at": "2026-02-24T21:18:55.318199"
       }
     ]
+  },
+  "55edbd79-598f-46ee-8360-9a76e378fb91": {
+    "id": "55edbd79-598f-46ee-8360-9a76e378fb91",
+    "patient_name": "Frontend Upload",
+    "symptoms": "",
+    "medical_history": "",
+    "status": "pending",
+    "created_at": "2026-02-24T21:54:11.975887",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "a5593042-c593-4edc-9233-5df45ee42507_wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "filename": "wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "case_id": "55edbd79-598f-46ee-8360-9a76e378fb91",
+        "path": "uploads\\55edbd79-598f-46ee-8360-9a76e378fb91\\a5593042-c593-4edc-9233-5df45ee42507_wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "uploaded_at": "2026-02-24T21:54:12.365092"
+      }
+    ]
+  },
+  "d9e408f7-3088-4f35-b014-f362c36b817e": {
+    "id": "d9e408f7-3088-4f35-b014-f362c36b817e",
+    "patient_name": "Frontend Upload",
+    "symptoms": "",
+    "medical_history": "",
+    "status": "pending",
+    "created_at": "2026-02-24T21:54:37.797735",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "0b94a5dd-8583-48f1-ba1e-c95122aec4df_wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "filename": "wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "case_id": "d9e408f7-3088-4f35-b014-f362c36b817e",
+        "path": "uploads\\d9e408f7-3088-4f35-b014-f362c36b817e\\0b94a5dd-8583-48f1-ba1e-c95122aec4df_wim-van-t-einde-4y3efE_x-NU-unsplash.jpg",
+        "uploaded_at": "2026-02-24T21:54:38.242758"
+      }
+    ]
+  },
+  "35f07e84-9007-4fad-8044-a779a9803006": {
+    "id": "35f07e84-9007-4fad-8044-a779a9803006",
+    "patient_name": "Test Patient",
+    "symptoms": "fever, cough",
+    "medical_history": "none",
+    "status": "completed",
+    "created_at": "2026-02-24T22:28:11.772179",
+    "analysis": {
+      "case_id": "35f07e84-9007-4fad-8044-a779a9803006",
+      "primary_diagnosis": "See analysis below",
+      "confidence": "Pending clinical review",
+      "clinical_reasoning": "Possible diagnoses:\n1. Viral upper respiratory infection (60%)\n2. Community-acquired pneumonia (20%)\n\nClinical reasoning:\nPatient presents with fever and cough; consider viral causes vs bacterial given duration. Recommend chest X-ray and CBC.\n\nRecommended next steps:\n- Chest X-ray\n- Empiric supportive care\n- Follow-up in 48 hours or earlier if worse",
+      "recommendations": [],
+      "differential_diagnoses": [],
+      "timestamp": "2026-02-24T22:31:01.870773"
+    },
+    "files": [
+      {
+        "file_id": "834eb50a-e303-4a53-8e5a-68073fb7be7c_test_upload.txt",
+        "filename": "test_upload.txt",
+        "case_id": "35f07e84-9007-4fad-8044-a779a9803006",
+        "path": "uploads\\35f07e84-9007-4fad-8044-a779a9803006\\834eb50a-e303-4a53-8e5a-68073fb7be7c_test_upload.txt",
+        "uploaded_at": "2026-02-24T22:31:02.418871"
+      }
+    ]
+  },
+  "bce0a6d3-545e-4b6f-85f7-2c92448c37b7": {
+    "id": "bce0a6d3-545e-4b6f-85f7-2c92448c37b7",
+    "patient_name": "Frontend Upload",
+    "symptoms": "",
+    "medical_history": "",
+    "status": "pending",
+    "created_at": "2026-02-24T23:41:15.774095",
+    "analysis": null,
+    "files": [
+      {
+        "file_id": "458fd9d8-2b69-45d4-b1b8-7f2fb84430a4_C0384563-Segmental_pneumonia_lung_CT_scan_1.jpg",
+        "filename": "C0384563-Segmental_pneumonia_lung_CT_scan_1.jpg",
+        "case_id": "bce0a6d3-545e-4b6f-85f7-2c92448c37b7",
+        "path": "uploads\\bce0a6d3-545e-4b6f-85f7-2c92448c37b7\\458fd9d8-2b69-45d4-b1b8-7f2fb84430a4_C0384563-Segmental_pneumonia_lung_CT_scan_1.jpg",
+        "uploaded_at": "2026-02-24T23:41:16.090843"
+      }
+    ]
   }
 }
